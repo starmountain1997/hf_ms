@@ -1,0 +1,18 @@
+[project]
+name = "hf-ms"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "g-playwright",
+]
+
+[dependency-groups]
+dev = [
+    "basedpyright>=1.39.3",
+    "ruff>=0.15.12",
+]
+
+[tool.uv.sources]
+g-playwright = { git = "ssh://git@github.com/asinkLuno/g-playwright.git" }

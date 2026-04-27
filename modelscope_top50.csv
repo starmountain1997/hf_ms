@@ -1,0 +1,51 @@
+﻿title,path,downloads,size,author,task,framework,license,date,url
+FSMN语音端点检测-中文-通用-16k,iic/speech_fsmn_vad_zh-cn-16k-common-pytorch,221,242.9M,通义实验室,语音端点检测,PyTorch,Apache License 2.0,2024.02.06,https://modelscope.cn/models/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch
+SeACoParaformer热词语音识别-中文-通用-16k-离线-large,iic/speech_seaco_paraformer_large_asr_nat-zh-cn-16k-common-vocab8404-pytorch,124,131.2M,通义实验室,语音识别,PyTorch,Apache License 2.0,2024.09.30,https://modelscope.cn/models/iic/speech_seaco_paraformer_large_asr_nat-zh-cn-16k-common-vocab8404-pytorch
+CT-Transformer标点-中文-通用-pytorch,iic/punc_ct-transformer_zh-cn-common-vocab272727-pytorch,129,106.0M,通义实验室,标点预测,PyTorch,Apache License 2.0,2024.12.25,https://modelscope.cn/models/iic/punc_ct-transformer_zh-cn-common-vocab272727-pytorch
+Paraformer语音识别-中文-通用-16k-离线-large-长音频版,iic/speech_paraformer-large-vad-punc_asr_nat-zh-cn-16k-common-vocab8404-pytorch,597,76.5M,通义实验室,语音识别,PyTorch,Apache License 2.0,2024.02.01,https://modelscope.cn/models/iic/speech_paraformer-large-vad-punc_asr_nat-zh-cn-16k-common-vocab8404-pytorch
+FSMN语音端点检测-中文-通用-16k-onnx,iic/speech_fsmn_vad_zh-cn-16k-common-onnx,45,65.5M,通义实验室,语音端点检测,ONNX,Apache License 2.0,2024.06.21,https://modelscope.cn/models/iic/speech_fsmn_vad_zh-cn-16k-common-onnx
+CAM++说话人确认-中文-通用-200k-Spkrs,iic/speech_campplus_sv_zh-cn_16k-common,233,55.7M,通义实验室,说话人确认,PyTorch,Apache License 2.0,2024.06.24,https://modelscope.cn/models/iic/speech_campplus_sv_zh-cn_16k-common
+PDF-Extract-Kit-1.0 模型仓库 (MinerU使用仓库),OpenDataLab/PDF-Extract-Kit-1.0,52,1.55B,OpenDataLab,文字检测,Safetensors等3个框架,N/A,2026.03.19,https://modelscope.cn/models/OpenDataLab/PDF-Extract-Kit-1.0
+emotion2vec+large语音情感识别基座模型large模型,iic/emotion2vec_plus_large,76,50.5M,通义实验室,情绪识别,PyTorch,Apache License 2.0,2026.03.16,https://modelscope.cn/models/iic/emotion2vec_plus_large
+SenseVoice多语言语音理解模型Small,iic/SenseVoiceSmall,589,40.7M,通义实验室,语音识别,PyTorch,Apache License 2.0,2024.09.26,https://modelscope.cn/models/iic/SenseVoiceSmall
+基于FST的中文ITN,thuduj12/fst_itn_zh,24,39.5M,孤鸿,逆文本正则化,c++,Apache License 2.0,2023.09.14,https://modelscope.cn/models/thuduj12/fst_itn_zh
+Paraformer语音识别-中文-通用-16k-离线-large-pytorch,iic/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-pytorch,601,33.7M,通义实验室,语音识别,PyTorch,Apache License 2.0,2024.02.01,https://modelscope.cn/models/iic/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-pytorch
+Ngram语言模型-中文-ai-wesp-fst,iic/speech_ngram_lm_zh-cn-ai-wesp-fst,10,29.4M,通义实验室,困惑度计算,PyTorch,Apache License 2.0,2023.12.12,https://modelscope.cn/models/iic/speech_ngram_lm_zh-cn-ai-wesp-fst
+Paraformer语音识别-中文-通用-16k-离线-large-长音频版-onnx,iic/speech_paraformer-large-vad-punc_asr_nat-zh-cn-16k-common-vocab8404-onnx,50,29.2M,通义实验室,语音识别,ONNX,Apache License 2.0,2024.09.25,https://modelscope.cn/models/iic/speech_paraformer-large-vad-punc_asr_nat-zh-cn-16k-common-vocab8404-onnx
+CT-Transformer标点-中英文-通用-large,iic/punc_ct-transformer_cn-en-common-vocab471067-large,35,27.5M,通义实验室,标点预测,PyTorch,Apache License 2.0,2024.02.06,https://modelscope.cn/models/iic/punc_ct-transformer_cn-en-common-vocab471067-large
+CT-Transformer标点-中文-通用-实时-onnx,iic/punc_ct-transformer_zh-cn-common-vad_realtime-vocab272727-onnx,25,25.1M,通义实验室,标点预测,ONNX,Apache License 2.0,2024.09.25,https://modelscope.cn/models/iic/punc_ct-transformer_zh-cn-common-vad_realtime-vocab272727-onnx
+Paraformer语音识别-中文-通用-16k-实时-large-onnx,iic/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-online-onnx,103,24.7M,通义实验室,语音识别,ONNX,Apache License 2.0,2024.09.25,https://modelscope.cn/models/iic/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-online-onnx
+RetinaFace人脸检测关键点模型,iic/cv_resnet50_face-detection_retinaface,150,19.8M,通义实验室,人脸检测,PyTorch,MIT License,2023.02.15,https://modelscope.cn/models/iic/cv_resnet50_face-detection_retinaface
+DamoFD人脸检测关键点模型-0.5G,iic/cv_ddsar_face-detection_iclr23-damofd,85,18.4M,通义实验室,人脸检测,PyTorch,MIT License,2023.08.19,https://modelscope.cn/models/iic/cv_ddsar_face-detection_iclr23-damofd
+图像旋转判断模型,Cherrytest/rot_bgr,43,17.9M,小橙鱼,N/A,PyTorch,Apache License 2.0,2023.08.24,https://modelscope.cn/models/Cherrytest/rot_bgr
+BSHM通用抠图,iic/cv_unet_universal-matting,269,16.8M,通义实验室,通用抠图,TensorFlow,Apache License 2.0,2023.03.01,https://modelscope.cn/models/iic/cv_unet_universal-matting
+Paraformer语音识别-中文-通用-16k-离线-large-onnx,iic/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-onnx,53,14.2M,通义实验室,语音识别,ONNX,Apache License 2.0,2024.09.25,https://modelscope.cn/models/iic/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-onnx
+pengzhendong/wetext,pengzhendong/wetext,2,12.0M,pengzhendong/wetext,N/A,N/A,Apache License 2.0,2025.11.28,https://modelscope.cn/models/pengzhendong/wetext
+Paraformer分角色语音识别-中文-通用,iic/speech_paraformer-large-vad-punc-spk_asr_nat-zh-cn,183,11.8M,通义实验室,语音识别,PyTorch,Apache License 2.0,2024.01.23,https://modelscope.cn/models/iic/speech_paraformer-large-vad-punc-spk_asr_nat-zh-cn
+CT-Transformer标点-中英文-通用-large-onnx,iic/punc_ct-transformer_cn-en-common-vocab471067-large-onnx,17,11.1M,通义实验室,标点预测,ONNX,Apache License 2.0,2024.09.25,https://modelscope.cn/models/iic/punc_ct-transformer_cn-en-common-vocab471067-large-onnx
+实时口罩检测-通用,iic/cv_tinynas_object-detection_damoyolo_facemask,40,10.8M,通义实验室,垂类目标检测,PyTorch,N/A,2025.06.08,https://modelscope.cn/models/iic/cv_tinynas_object-detection_damoyolo_facemask
+读光-文字检测-DBNet行检测模型-中英-通用领域,iic/cv_resnet18_ocr-detection-db-line-level_damo,87,9.5M,通义实验室,文字检测,ONNX,Apache License 2.0,2023.10.25,https://modelscope.cn/models/iic/cv_resnet18_ocr-detection-db-line-level_damo
+千问2.5-0.5B-Instruct,Qwen/Qwen2.5-0.5B-Instruct,227,494.03M,通义千问,文本生成,Safetensors,N/A,2025.02.27,https://modelscope.cn/models/Qwen/Qwen2.5-0.5B-Instruct
+读光-文字识别-行识别模型-中英-通用领域,iic/cv_convnextTiny_ocr-recognition-general_damo,179,8.3M,通义实验室,文字识别,ONNX,Apache License 2.0,2023.11.22,https://modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-general_damo
+MGeo门址地址结构化要素解析-中文-地址领域-base,iic/mgeo_geographic_elements_tagging_chinese_base,187,8.3M,通义实验室,序列标注,PyTorch,Apache License 2.0,2025.12.16,https://modelscope.cn/models/iic/mgeo_geographic_elements_tagging_chinese_base
+LaMa图像填充,iic/cv_fft_inpainting_lama,199,8.0M,通义实验室,N/A,PyTorch,Apache License 2.0,2023.03.17,https://modelscope.cn/models/iic/cv_fft_inpainting_lama
+通义万相2.2-图文生视频-5B,Wan-AI/Wan2.2-TI2V-5B,117,5.00B,通义万相,统一多模态,Safetensors,N/A,2025.11.06,https://modelscope.cn/models/Wan-AI/Wan2.2-TI2V-5B
+M2FP多人人体解析,iic/cv_resnet101_image-multiple-human-parsing,44,7.5M,通义实验室,N/A,PyTorch,N/A,2023.02.13,https://modelscope.cn/models/iic/cv_resnet101_image-multiple-human-parsing
+通义万相2.1-文生视频-1.3B,Wan-AI/Wan2.1-T2V-1.3B,150,1.42B,通义万相,文本生成视频,Safetensors等3个框架,N/A,2025.02.27,https://modelscope.cn/models/Wan-AI/Wan2.1-T2V-1.3B
+千问2.5-7B-Instruct,Qwen/Qwen2.5-7B-Instruct,451,7.62B,通义千问,文本生成,Safetensors,N/A,2025.03.07,https://modelscope.cn/models/Qwen/Qwen2.5-7B-Instruct
+OpenBMB/cpm-bee-10b,OpenBMB/cpm-bee-10b,6,6.5M,OpenBMB,文本生成,PyTorch,N/A,2025.02.26,https://modelscope.cn/models/OpenBMB/cpm-bee-10b
+Retinaface+CurricularFace人脸识别模型,bubbliiiing/cv_retinafce_recognition,64,6.4M,N/A,人脸识别,PyTorch,Apache License 2.0,2023.09.15,https://modelscope.cn/models/bubbliiiing/cv_retinafce_recognition
+FRCRN语音降噪-单麦-16k,iic/speech_frcrn_ans_cirm_16k,260,6.2M,通义实验室,语音降噪,PyTorch,Apache License 2.0,2025.01.22,https://modelscope.cn/models/iic/speech_frcrn_ans_cirm_16k
+千问3-8B,Qwen/Qwen3-8B,278,8.19B,通义千问,文本生成,N/A,N/A,2025.07.27,https://modelscope.cn/models/Qwen/Qwen3-8B
+GTE文本向量-中文-通用领域-base,iic/nlp_gte_sentence-embedding_chinese-base,123,5.5M,通义实验室,文本向量,PyTorch,Apache License 2.0,2025.12.01,https://modelscope.cn/models/iic/nlp_gte_sentence-embedding_chinese-base
+MGeo地址相似度匹配实体对齐-中文-地址领域-base,iic/mgeo_geographic_entity_alignment_chinese_base,75,5.5M,通义实验室,句子相似度,PyTorch,Apache License 2.0,2025.12.16,https://modelscope.cn/models/iic/mgeo_geographic_entity_alignment_chinese_base
+RaNER命名实体识别-中文-电商领域-细粒度-base,iic/nlp_raner_named-entity-recognition_chinese-base-ecom-50cls,161,5.3M,通义实验室,命名实体识别,PyTorch,Apache License 2.0,2023.11.15,https://modelscope.cn/models/iic/nlp_raner_named-entity-recognition_chinese-base-ecom-50cls
+万物识别-中文-通用领域,iic/cv_resnest101_general_recognition,208,5.2M,通义实验室,N/A,PyTorch,Apache License 2.0,2022.10.24,https://modelscope.cn/models/iic/cv_resnest101_general_recognition
+Valdemardi/DeepSeek-R1-Distill-Qwen-32B-AWQ,Valdemardi/DeepSeek-R1-Distill-Qwen-32B-AWQ,17,5.73B,Valdemardi,文本生成,Safetensors,N/A,2025.02.24,https://modelscope.cn/models/Valdemardi/DeepSeek-R1-Distill-Qwen-32B-AWQ
+InspireFace Models,tunmxy/InspireFace,3,4.9M,N/A,人脸识别,N/A,N/A,2025.11.21,https://modelscope.cn/models/tunmxy/InspireFace
+Paraformer语音识别-中文-通用-16k-离线-large-热词版-onnx,iic/speech_paraformer-large-contextual_asr_nat-zh-cn-16k-common-vocab8404-onnx,25,4.9M,通义实验室,语音识别,ONNX,Apache License 2.0,2024.09.25,https://modelscope.cn/models/iic/speech_paraformer-large-contextual_asr_nat-zh-cn-16k-common-vocab8404-onnx
+千问2.5-VL-7B-Instruct,Qwen/Qwen2.5-VL-7B-Instruct,412,8.29B,通义千问,视觉多模态理解,N/A,N/A,2025.04.07,https://modelscope.cn/models/Qwen/Qwen2.5-VL-7B-Instruct
+千问3-0.6B,Qwen/Qwen3-0.6B,208,751.63M,通义千问,文本生成,N/A,N/A,2025.07.27,https://modelscope.cn/models/Qwen/Qwen3-0.6B
+DeepSeek-R1-Distill-Qwen-32B-GPTQ-Int4,tclf90/deepseek-r1-distill-qwen-32b-gptq-int4,17,5.74B,ElliotGao,文本生成,Safetensors,N/A,2025.03.11,https://modelscope.cn/models/tclf90/deepseek-r1-distill-qwen-32b-gptq-int4
+人脸质量模型FQA,iic/cv_manual_face-quality-assessment_fqa,90,4.6M,通义实验室,N/A,PyTorch,MIT License,2023.08.20,https://modelscope.cn/models/iic/cv_manual_face-quality-assessment_fqa
+ZhipuAI/glm-4-9b-chat-1m,ZhipuAI/glm-4-9b-chat-1m,62,9.48B,智谱.AI,N/A,N/A,N/A,2026.01.20,https://modelscope.cn/models/ZhipuAI/glm-4-9b-chat-1m
