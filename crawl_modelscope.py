@@ -7,15 +7,17 @@ import re
 import signal
 from pathlib import Path
 
+from loguru import logger
+
 import lmdb
 from g_playwright.firefox import create_playwright_context, find_firefox_profile, human_delay
 
 DB_PATH = Path(__file__).parent / "modelscope_crawl.lmdb"
 CSV_PATH = Path(__file__).parent / "modelscope_top1000.csv"
 BASE_URL = "https://modelscope.cn/models"
-MAX_MODELS = 10
+MAX_MODELS = 1000
 LIST_CONCURRENCY = 3     # parallel list pages
-DETAIL_CONCURRENCY = 3   # parallel detail pages
+DETAIL_CONCURRENCY = 2   # parallel detail pages
 MAX_PAGES = 200          # safety limit
 
 
@@ -167,18 +169,18 @@ async def _crawl_list_pages(env: lmdb.Environment, context) -> int:
     total = len(_all_models(env))
 
     if pages_done:
-        print(f"[resume] pages done: {pages_done}")
-        print(f"[resume] known models: {total}")
+        logger.info(f"[resume] pages done: {pages_done}")
+        logger.info(f"[resume] known models: {total}")
 
     if total >= MAX_MODELS:
-        print(f"Already have {total} models >= {MAX_MODELS}")
+        logger.info(f"Already have {total} models >= {MAX_MODELS}")
         return total
 
     page = max(pages_done) + 1 if pages_done else 1
 
     while total < MAX_MODELS and page <= MAX_PAGES:
         batch = list(range(page, min(page + LIST_CONCURRENCY, MAX_PAGES + 1)))
-        print(f"  list pages {batch[0]}-{batch[-1]} …")
+        logger.info(f"  list pages {batch[0]}-{batch[-1]} …")
 
         results = await asyncio.gather(
             *[_scrape_list_page(context, p) for p in batch],
@@ -188,21 +190,21 @@ async def _crawl_list_pages(env: lmdb.Environment, context) -> int:
         new_pages = []
         for p, res in zip(batch, results):
             if isinstance(res, Exception):
-                print(f"    page {p} FAILED: {res}")
+                logger.error(f"    page {p} FAILED: {res}")
                 continue
             _save_models(env, res)
             new_pages.append(p)
-            print(f"    page {p}: {len(res)} models")
+            logger.info(f"    page {p}: {len(res)} models")
 
         pages_done.extend(new_pages)
         _save_pages_done(env, pages_done)
 
         total = len(_all_models(env))
-        print(f"  total known: {total}")
+        logger.info(f"  total known: {total}")
 
         # If no results from any page in this batch, assume we hit the end
         if all(isinstance(r, Exception) or len(r) == 0 for r in results):
-            print("  no more models found, stopping list crawl")
+            logger.warning("  no more models found, stopping list crawl")
             break
 
         page += LIST_CONCURRENCY
@@ -216,10 +218,10 @@ async def _crawl_details(env: lmdb.Environment, context) -> None:
     to_crawl = [m for m in models if not m.get("downloads") or m["downloads"] == "N/A"]
 
     if not to_crawl:
-        print("All models already have detail data, skipping.")
+        logger.info("All models already have detail data, skipping.")
         return
 
-    print(f"Crawling details for {len(to_crawl)} models (concurrency={DETAIL_CONCURRENCY}) …")
+    logger.info(f"Crawling details for {len(to_crawl)} models (concurrency={DETAIL_CONCURRENCY}) …")
     sem = asyncio.Semaphore(DETAIL_CONCURRENCY)
 
     async def _one(m: dict) -> dict:
@@ -229,15 +231,15 @@ async def _crawl_details(env: lmdb.Environment, context) -> None:
                 m.update(detail)
                 _save_models(env, [m])
             except Exception as e:
-                print(f"    FAIL {m['path']}: {e}")
+                logger.info(f"    FAIL {m['path']}: {e}")
             return m
 
     tasks = [_one(m) for m in to_crawl]
     for i, coro in enumerate(asyncio.as_completed(tasks), 1):
         await coro
         if i % 20 == 0:
-            print(f"  detail progress: {i}/{len(to_crawl)}")
-    print(f"  detail done: {len(to_crawl)}")
+            logger.info(f"  detail progress: {i}/{len(to_crawl)}")
+    logger.info(f"  detail done: {len(to_crawl)}")
 
 
 # ── Entry point ───────────────────────────────────────────────────────
@@ -252,23 +254,23 @@ async def main():
         except NotImplementedError:
             pass  # Windows
 
-    async with create_playwright_context(profile_path="/home/guozr/.mozilla/firefox/2pydknyh.default-release", headless=False) as context:
+    async with create_playwright_context(profile_path="/home/guozr/.mozilla/firefox/2pydknyh.default-release", headless=True) as context:
         if not stop.is_set():
-            print("=== Phase 1: crawling list pages ===")
+            logger.info("=== Phase 1: crawling list pages ===")
             n = await _crawl_list_pages(env, context)
-            print(f"  total models collected: {n}")
+            logger.info(f"  total models collected: {n}")
 
         if not stop.is_set():
-            print("\n=== Phase 2: crawling model details ===")
+            logger.info("\n=== Phase 2: crawling model details ===")
             await _crawl_details(env, context)
 
-    print("\n=== Results ===")
+    logger.info("\n=== Results ===")
     top = _sorted_models(env)[:MAX_MODELS]
-    print(f"Total in DB: {len(_all_models(env))}")
-    print(f"Top {len(top)} by downloads:")
+    logger.info(f"Total in DB: {len(_all_models(env))}")
+    logger.info(f"Top {len(top)} by downloads:")
 
     for i, m in enumerate(top, 1):
-        print(f"  {i:4d}. {m['path']:<50} {m.get('downloads','?'):>10}")
+        logger.info(f"  {i:4d}. {m['path']:<50} {m.get('downloads','?'):>10}")
 
     with open(CSV_PATH, "w", newline="", encoding="utf-8-sig") as f:
         fields = ["path", "name", "modelType", "author", "likes", "downloads", "publishTime", "url"]
@@ -276,7 +278,7 @@ async def main():
         w.writeheader()
         w.writerows({k: m.get(k, "N/A") for k in fields} for m in top)
 
-    print(f"\nSaved CSV: {CSV_PATH}")
+    logger.info(f"\nSaved CSV: {CSV_PATH}")
     env.close()
 
 
