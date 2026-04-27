@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "g-playwright",
+    "lmdb>=2.2.0",
 ]
 
 [dependency-groups]
@@ -16,3 +17,7 @@ dev = [
 
 [tool.uv.sources]
 g-playwright = { git = "ssh://git@github.com/asinkLuno/g-playwright.git" }
+
+[[tool.uv.index]]
+url = "https://mirrors.aliyun.com/pypi/simple"
+default = true
